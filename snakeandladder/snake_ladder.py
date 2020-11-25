@@ -132,7 +132,7 @@ def start():
 
     while True:
         time.sleep(delay_time)
-        input_1=input("\n" + player1_name + ": " + random.choice(player_turn_text) + " Hit the enter to roll dice: ")
+        input("\n" + player1_name + ": " + random.choice(player_turn_text) + " Hit the enter to roll dice: ")
         print("\nRolling dice...")
         dice_value = get_dice_value()
         time.sleep(delay_time)
@@ -142,7 +142,7 @@ def start():
         check_win(player1_name,player1_current_pos)
 
 
-        input_2=input("\n" + player2_name + ": " + random.choice(player_turn_text) + " Hit the enter to roll dice: ")
+        input("\n" + player2_name + ": " + random.choice(player_turn_text) + " Hit the enter to roll dice: ")
         print("\nRolling dice...")
         dice_value = get_dice_value()
         time.sleep(delay_time)
