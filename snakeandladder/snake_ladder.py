@@ -4,72 +4,60 @@
 import time
 import random
 delay_time = 1  # Just for effects adding a delay of 1 sec between the actions
-max_val = 100
+max_pos = 100
 dice_face = 6  # max value of dice face
 
 # snake takes you down from key to value
 
 snakes = {
-    8: 4,
-    18: 1,
+    18: 4,
     26: 10,
     39: 5,
-    51: 6,
-    54: 36,
-    56: 1,
+    50: 1,
     60: 23,
     75: 28,
     83: 45,
     85: 59,
-    90: 48,
     92: 25,
-    97: 87,
-    99: 63,
+    99: 53,
     }
 
 # ladder takes you up from key to value
 
 ladders = {
     3: 20,
-    6: 14,
     11: 28,
-    15: 34,
     17: 74,
     22: 37,
     38: 59,
     49: 67,
     57: 76,
-    61: 78,
     73: 86,
-    81: 98,
-    88: 91,
     }
 
 player_turn_text = [
     'Your turn.',
     'Go.',
     'Please proceed.',
-    'Lets win this.',
     'Are you ready?',
     '',
     ]
 
-snake_bite = ['boohoo', 'bummer', 'snake bite', 'oh no', 'dang']
+snake_bite = ['bummer', 'snake bite', 'oh no']
 
-ladder_jump = ['woohoo', 'woww', 'nailed it', 'oh my God...', 'yaayyy']
+ladder_jump = ['woohoo', 'woww', 'yaayyy']
 
 
 def welcome_msg():
     msg = \
         """
     Welcome to Snake and Ladder Game.
-    Developed by: Ram Punia
     1. Initally both the players are at starting position 0
-    2. If you lands at the bottom of a ladder,
-        you can move up to the top of the ladder.
+    2. If you lands at the tail of a ladder,
+        you can move up to the head of the ladder.
     3. If you lands on the head of a snake,
-        you must slide down to the bottom of the snake.
-    4. The first player to get to the FINAL position is the winner.
+        you must slide down to the tail of the snake.
+    4. The first player to get to the Final position is the winner.
     5. Hit enter to roll the dice.
 
     """
@@ -109,8 +97,8 @@ def snake_ladder(player_name, current_value, dice_value):
     time.sleep(delay_time)
     old_value = current_value
     current_value = old_value + dice_value
-    if current_value > max_val:
-        print('you need ' + str(current_value - max_val)
+    if current_value > max_pos:
+        print('you need ' + str(current_value - max_pos)
                           + ' to win the game')
         return old_value
     print('\n' + player_name + ' move from ' + str(old_value) + ' to '
@@ -128,13 +116,8 @@ def snake_ladder(player_name, current_value, dice_value):
 
 def check_win(player_name, position):
     time.sleep(delay_time)
-    if max_val == position:
-        print('''
-
-
-Thats it.
-
-''' + player_name + ' won the game.')
+    if max_pos == position:
+        print(player_name + ' won the game.')
         print('Congratulations ' + player_name)
         exit()
 
