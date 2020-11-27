@@ -8,9 +8,7 @@ git clone https://github.com/attainu/project-ram-singh-au13/tree/dev/snakeandlad
 
 ## Few basic concepts used in this code are:
     - Dictionary
-    - List
     - Generating random number
-    - Selecting a Random value from a list
     - Adding wait/sleep in program
     - Conditional Statements i.e. IF and ELSE
     - Getting input from user
